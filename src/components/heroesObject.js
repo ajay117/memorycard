@@ -13,7 +13,7 @@ import storm from "../images/storm.jpeg";
 import superman from "../images/superman.jpeg";
 import thor from "../images/thor.jpeg";
 import wolverine from "../images/wolverine.jpeg";
-import wonderWoman from "../images/wonder-women.jpeg";
+import wonderWoman from "../images/wonder-woman.jpeg";
 
 const heroesObject = [
 	{
