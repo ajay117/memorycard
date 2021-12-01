@@ -1,72 +1,38 @@
 // import React, { useState, useEffect } from "react";
+// import { render } from "@testing-library/react";
 import React, { useState } from "react";
 import "./App.css";
 import heroesObject from "./components/heroesObject";
 
-function App() {
-	let randomIndex = Math.floor(Math.random() * 16);
-	const [isGameOver, setIsGameOver] = useState(false);
-	const [image, setImage] = useState(heroesObject[randomIndex]);
-	const [clickedPictures, setClickedPictures] = useState([]);
-	const [score, setScore] = useState(0);
-	const [highScore, setHighScore] = useState(0);
+// function App() {
+// 	const [score, setScore] = useState(0);
+// 	const [highScore, setHighScore] = useState(0);
+// 	const [level, setLevel] = useState(1);
+// 	//Pictures we have clicked will be saved in this array.
+// 	const [seenImages, setSeenImages] = useState([]);
+// 	// const [randomIndex, setRandomIndex] = useState();
+// 	const [hero, setHero] = useState(heroesObject[Math.floor(Math.random() * 16)]);
 
-	let generateRandomImage = () => {
-		randomIndex = Math.floor(Math.random() * 16);
-		setImage(heroesObject[randomIndex]);
-	};
 
-	let firstTimeClickingIt = () => {
-		if (clickedPictures.indexOf(image.name) === -1 && !isGameOver) {
-			setClickedPictures((clickedPictures) => [...clickedPictures, image.name]);
-			generateRandomImage();
-			setScore(score + 1);
-		} else {
-			if (highScore < score) setHighScore(score);
-			setIsGameOver(true);
-			alert("You Lose");
-		}
-	};
 
-	let alreadyClicked = () => {
-		if (clickedPictures.indexOf(image.name) !== -1) {
-			generateRandomImage();
-			setScore(score + 1);
-		} else alert("You Lose");
-	};
 
-	let playAgain = () => {
-		setIsGameOver(false);
-		setScore(0);
-		setClickedPictures([]);
-		generateRandomImage();
-	};
-
-	return (
-		<div>
-			<p>Score:{score}</p>
-			<p>High Score:{highScore}</p>
-			<p
-				style={{
-					textAlign: "center",
-					fontWeight: "600",
-					fontSize: "30px",
-				}}
-			>
-				Hero: {image.name}
-			</p>
-			<div>
-				<img src={image.src} alt={image.name}></img>
-			</div>
-			<button disabled={isGameOver} onClick={firstTimeClickingIt}>
-				First Time{" "}
-			</button>
-			<button disabled={isGameOver} onClick={alreadyClicked}>
-				Second Time
-			</button>
-			<button onClick={playAgain}>Play Again</button>
-		</div>
-	);
+// 	return (
+// 		<div className="game-container">
+// 			<h4>High Score: {highScore}</h4>
+// 			<h4>Score: {score}</h4>
+// 			<h4>Level: {level}</h4>
+// 			<h5>SuperHero: {hero.name}</h5>
+// 			<div className="img-container">
+// 			  <img src={hero.src} alt="Marvel hero"/>
+// 			</div>
+// 			<div className="btn-container">
+// 				<button onClick={sameImage}>Repeated</button>
+// 				<button>Not Repeated</button>
+// 				<button>Play Again</button>
+// 			</div>
+// 			<p className="info">Score 5 points to level up.</p>
+// 		</div>
+// 	);
 }
 
 export default App;
