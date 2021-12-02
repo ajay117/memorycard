@@ -1,7 +1,7 @@
 import { useState,useEffect } from "react";
 import heroesObject from "./heroesObject";
 
-function ImageLoad(props) {
+function PlayArea(props) {
     const [loadHeroesArr, setLoadHeroesArr] = useState(heroesObject[0].src);
     useEffect(() => {
         while(loadHeroesArr.length <= 5) {
@@ -15,4 +15,4 @@ function ImageLoad(props) {
     );
 }
 
-export default ImageLoad;
+export default PlayArea;
