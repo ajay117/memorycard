@@ -4,16 +4,14 @@ import GameWon from "./GameWon";
 
 function PlayArea(props) {
     let addHeroes = props.heroes.map(hero => 
-        <img src={hero.src} onClick={props.clicked} alt= {hero.name} key={hero.name} />
+        <div data-name={hero.name} onClick={props.clicked} key={hero.name}>
+          <img data-name={hero.name} src={hero.src}  alt= {hero.name} />
+          <p data-name={hero.name}>{hero.name}</p>
+        </div>
     );
     return (
-        <div>
-            <p>Score: {props.score}</p>
-            <p>High Score: </p>
-            <p>Level</p>
-            <div>
+        <div className="hero-container">
                 {(props.score === 5) ? <GameWon /> : addHeroes};
-            </div>
         </div>
     );
 }
