@@ -1,9 +1,9 @@
 function GameInfo(props) {
     return (
-        <div>
+        <div className="score-container">
             <p>Score: {props.score}</p>
             <p>High Score: {props.highScore}</p>
-            <p>Level</p>
+            {/* <p>Level</p> */}
         </div>
     );
 }
