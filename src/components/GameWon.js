@@ -1,6 +1,9 @@
 function GameWon() {
     return (
-        <h1>You win the game</h1>
+        <div>
+          <h1 className="game-result">You win the game</h1>
+          {/* <button>Continue</button> */}
+        </div>
     );
 }
 

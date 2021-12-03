@@ -12,6 +12,7 @@ function App() {
     const [highScore, setHighScore] = useState(0);
     const heroes = [];
     const [playerClickedPics, setPlayerClickedPics] = useState([]);
+    const loading = true;
     
     let randomNumArr = [];
     while(randomNumArr.length < 5) {
@@ -40,13 +41,14 @@ function App() {
     // const [level, setLevel] = useState(0);
     return (
         <div>
-            <GameInfo score={score}
-                      highScore={highScore}/>
+            {isGameOver ? null : <GameInfo score={score}
+                                    highScore={highScore}/>}
+            
             {!isGameOver ? <PlayArea
                             heroes={heroes}
                             score={score} 
                             clicked={clicked} /> 
-                         : <GameOver />}
+                         : <GameOver score={score} highScore={highScore} />}
         </div>
     );
 }

@@ -28,3 +28,20 @@
   display: flex;
   justify-content: space-between;
 }
+.game-over {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+}
+/* .game-over p:first-child {
+  font-size: 40px;
+} */
+.game-over {
+  font-size: 22px;
+}
+.game-result {
+  font-size: 40px;
+  text-align: center;
+}
