@@ -1,36 +1,30 @@
-/* * {
+* {
   box-sizing: border-box;
 }
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.game-container {
-  margin: 0 auto;
-  width: 200px;
-}
-.img-container {
-  width: 200px;
-  height: 250px;
-  margin-bottom: 20px;
-}
-.img-container > img {
-  width: 200px;
-  height: 100%;
-}
-.info {
-  background-color: blue;
-  padding: 10px;
-  color: white;
-} */
-
 .hero-container {
+  margin: 40px;
   display: flex;
   flex-wrap: wrap;
+  opacity: 0.5;
+  transition: opacity 300 ease-in-out;
+}
+.full-opacity {
+  opacity: 1;
+}
 
+.hero {
+  margin: 10px auto;
+  border: 1px solid black;
+}
+.hero-img {
+  width: 120px;
+  height: 120px;
+}
+.hero-name {
+  text-align: center;
+  margin: 10px 0;
+}
+.score-container {
+  display: flex;
+  justify-content: space-between;
 }
