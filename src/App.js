@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import heroesObject from "./components/heroesObject";
 // import heroesObject from "./components/heroesObject";
@@ -14,18 +14,15 @@ function App() {
     const [playerClickedPics, setPlayerClickedPics] = useState([]);
     
     let randomNumArr = [];
-    while(randomNumArr.length < 6) {
+    while(randomNumArr.length < 5) {
       let randomNum = Math.floor(Math.random() * 16);
       if(!randomNumArr.includes(randomNum)) {
           randomNumArr.push(randomNum);
       } 
     }
-
     randomNumArr.forEach(num => {
         heroes.push(heroesObject[num]);
     })
-
-
 
     const clicked = (e) => {
         let heroName = e.target.dataset.name;
