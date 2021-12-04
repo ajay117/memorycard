@@ -8,11 +8,11 @@ import GameInfo from "./components/GameInfo";
 
 function App() {
     const [isGameOver, setIsGameOver] = useState(false);
+    const [level, setLevel] = useState(0);
     const [score, setScore] = useState(0);
     const [highScore, setHighScore] = useState(0);
     const heroes = [];
     const [playerClickedPics, setPlayerClickedPics] = useState([]);
-    const loading = true;
     
     let randomNumArr = [];
     while(randomNumArr.length < 5) {
@@ -38,17 +38,18 @@ function App() {
         }
     }
     // const [heroesChoseByPlayer, setHeroesChoseByPlayer] = useState([]);
-    // const [level, setLevel] = useState(0);
+    
     return (
         <div>
             {isGameOver ? null : <GameInfo score={score}
-                                    highScore={highScore}/>}
+                                    highScore={highScore}
+                                    level={level}/>}
             
             {!isGameOver ? <PlayArea
                             heroes={heroes}
                             score={score} 
                             clicked={clicked} /> 
-                         : <GameOver score={score} highScore={highScore} />}
+                         : <GameOver score={score} highScore={highScore} level={level} />}
         </div>
     );
 }

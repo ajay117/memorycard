@@ -21,7 +21,7 @@ function PlayArea(props) {
     );
     return (
         <div className="hero-container">
-                {(props.score === 5) ? <GameWon /> : addHeroes};
+                {(props.score === 5) ? <GameWon /> : addHeroes}
         </div>
     );
 }
